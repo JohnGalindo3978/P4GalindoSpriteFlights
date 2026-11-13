@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     Rigidbody2D rb;
     public UIDocument uiDocument;
     private Label scoreText;
+    public GameObject explosionEffect; 
 
 // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +46,8 @@ public class PlayerControl : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+
 
     }
 }
